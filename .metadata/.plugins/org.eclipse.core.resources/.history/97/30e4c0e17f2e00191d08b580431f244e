@@ -1,0 +1,15 @@
+package com.app.allyworld.website.entity;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+import com.fasterxml.jackson.databind.util.Converter;
+
+public class StringToLocalDateTimeConverter implements Converter<String, LocalDateTime> {
+	    public LocalDateTime convert(String source) {
+	        DateTimeFormatter formatter = DateTimeFormatter.BASIC_ISO_DATE;
+	        return LocalDateTime.parse(source, formatter);
+	    }
+	}
+
+
